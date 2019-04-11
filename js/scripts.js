@@ -1,34 +1,68 @@
-$(document).ready(function () {
+$(document).ready(function() {
+  $("form#playerTeam").submit(function(event) {
 
-var clickGame = document.getElementById("clickGame");
-var case1 = document.getElementById("corner1");
-var case2 = document.getElementById("side2");
-var case3 = document.getElementById("corner3");
-var case4 = document.getElementById("side4");
-var case5 = document.getElementById("center5");
-var case6 = document.getElementById("side6");
-var case7 = document.getElementById("corner7");
-var case8 = document.getElementById("side8");
-var case9 = document.getElementById("corner9");
-// var elt = this;
-// var idElt = this.getAttribute("id");
-// var iconCross = $("input#x").val();
-// var iconCircle = $("input#o").val();
-//
-// console.log(elt, idElt);
+// user choice team
+var userTeam = $("select#teamChoice").val();
+// user click on game
 
+var turnCount = 1;
+var xMarks = [];
+var oMarks = [];
+var winCombi =
+[["1","2","3"],["4","5","6"],["7","8","9"],["1","4","7"],["2","5","8"],["3","6","9"],["1","5","9"];
 
-case1.addEventListener('click', function(e) {
-    e.target.innerHTML = 'X';
+var littleCases = document.getElementById("corner1");
+  littleCases.addEventListener("click", function(e) {
+    e.target.innerhtml = "Click"
 });
 
-// var game = {
-//   user: "",
-//   computer: "",
-//   currentPlayer: "",
-//   moves: 1,
+
+//
+// //Loop to get an event for each cases
+// for (var i=0;i< littleCases.length; i++ ) {
+//   littleCases[i].addEventListener ("click", addPlayerMark)
+// }
+// // function to mark the case that was clicked
+// function addPlayerMark(event) {
+//   if (event.target.innerHTML.length === 0) {
+//     if (turnCounter % 2 === 0) {
+//         xMarks.push(event.target.id);
+//         console.log(xMarks)
+//         event.target.innerHTML = "X";
+//         event.target.style.background = "black";
+//     } else {
+//       oMarks.push(event.target.id);
+//       console.log(oMarks)
+//       event.target.innerHTML = "O";
+//       event.target.style.background= "white";
+//     }
+//   } else {
+//     alert("already clicked")
+//   }
+//
+//     turnCount++;
+//     checkWinners(xMarks,"X");
+//     checkWinners(oMarks, "O")
+//     if (turnCount === 10) {
+//       alert("DRAW")
+//     }
+// }
+// // function to know who wins
+// function checkWinners(marksArray, name){
+//   for (i=0; i<winningCombos.length; i++)
+//     var numWins = 0;
+//
+//     for (var p= 0; p< winningCombos[i].length; p++) {
+//       if(marksArray.indexOf(winCombi[i][p]) !== -1) {
+//         numWins++;
+//       }
+//       if (numWins === 3) {
+//         alert("Game Over: Team" + userTeam + "Wins !");
+//       }
+//     }
 // }
 
+    event.preventDefault();
 
-
+  });
 });

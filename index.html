@@ -14,32 +14,41 @@
       </div>
     </div>
       <h3>Choose your Figure :</h3>
-      <form>
-      <input id="x" type="image" src="img/cross.png" value="X" onclick=alert("You Choose the Cross !")width="200" height="100" />
-      <input id="o" type="image" src="img/circle.png" value="O" onclick=alert("You Choose the Cross !")width="200" height="100" />
-      </form>
-
+      <div class="row">
+        <div class="col-md-12">
+          <form id="playerTeam">
+            <input id="x" type="image" src="img/cross.png" alt="submit" value="X"  onclick=alert("You Choose the Cross !")width="200" height="100" />
+            <input id="o" type="image" src="img/circle.png" alt="submit" onclick=alert("You Choose the Cross !")width="200" height="100" />
+            <br><label for="teamChoice"> Choose your team  : </label> <br>
+            <select id="teamChoice"><br>
+              <option value="Nan"> Symbol </option>
+              <option value="X"> X </option>
+              <option value="O"> O </option>
+            </select><br>
+            <button type="submit" class="btn btn-dark"> Submit </button>
+          </form>
+        </div>
+      </div>
       </div>
       <hr>
-      <div id="clickGame">
         <section class="container">
           <p> </p>
             <div class-="tg-wrap">
-              <table>
+              <table id= "game">
                 <tr>
                   <th><span id="corner1">1</span></th>
-                  <th><span id="side2"> 2</span></th>
-                  <th><span id="corner3"> 3</span></th>
+                  <th id="side2" onclick="displaymarks()"></th>
+                  <th id="corner3" onclick="displaymarks()"></th>
                 </tr>
                 <tr>
-                  <td><span id="side4"></span></td>
-                  <td><span id="center5"></span></td>
-                  <td><span id="side6"></span></td>
+                  <td id="side4" onclick="displaymarks()"></td>
+                  <td id="center5" onclick="displaymarks()"></span></td>
+                  <td id="side6" onclick="displaymarks()"></td>
                 </tr>
                 <tr>
-                  <td><span id="corner7"></span></td>
-                  <td><span id="side8"></span></td>
-                  <td><span id="corner9"></span></td>
+                  <td id="corner7" onclick="displaymarks()"></td>
+                  <td id="side8" onclick="displaymarks()"></td>
+                  <td id="corner9" onclick="displaymarks()"></td>
                 </tr>
               </table>
             </div>
@@ -51,7 +60,6 @@
             </div>
             <button class= "btn btn-danger"onclick="location.reload();">Refresh Page</button>
         </section>
-      </div>
       </hr>
       <div class="boxmodel-2">
         <div class="container">
